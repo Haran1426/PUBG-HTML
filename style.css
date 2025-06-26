@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul, li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  vertical-align: middle;
+}
+body {
+  font-family: 'Noto Sans KR', 'Segoe UI', sans-serif;
+  background-color: #1f1f1f;
+  color: #e6e6e6;
+  background-image: url('../images/bg_texture_light.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.site-header {
+  background: linear-gradient(to bottom, #1a1a1a, #0f0f0f);
+  border-bottom: 2px solid #f3c537;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); 
+}
+.site-header > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  height: 100px;
+  padding: 0 30px;
+}
+.header__logo img {
+  height: 150px;
+}
+
+.gnb {
+  flex-grow: 1;
+}
+.gnb > ul {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+.gnb > ul > li {
+  position: relative;
+  min-width: 140px;
+}
+.gnb > ul > li > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 50px;
+  font-size: 16px;
+  color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+.gnb > ul > li:hover > a {
+  background-color: #f3c537;
+  color: #121212;
+}
+.gnb > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: #444;
+  z-index: 10;
+}
+.gnb > ul > li > ul a {
+  padding: 10px 20px;
+  display: block;
+  color: #ffc107;
+  transition: 0.3s;
+}
+.gnb > ul > li > ul a:hover {
+  background-color: #f3c537;
+  color: #000;
+}
+
+.slide {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 560px;
+}
+.slide ul {
+  display: flex;
+  width: calc(100vw * 4); 
+}
+.slide li {
+  width: 100vw;
+  height: 560px;
+  flex-shrink: 0;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.site-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+  gap: 25px;
+  margin: 40px 30px;
+}
+.site-content article {
+  background-color: #333;
+  border-radius: 8px;
+  border: 1px solid #3d3d3d;
+  padding: 20px;
+}
+
+.gallery {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.gallery ul {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.gallery li {
+  flex: 1;
+  max-height: 500px;
+  overflow: hidden;
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.gallery li:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.notice {
+  flex: 1;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.notice li {
+  line-height: 1.8;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.notice li a:hover {
+  color: #000;
+  background: #f3c537;
+  padding-left: 5px;
+  transition: 0.3s;
+}
+
+.content_title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #f3c537;
+  border-bottom: 2px solid #f3c537;
+  padding-bottom: 8px;
+}
+
+.site-footer {
+  margin-top: 50px;
+  min-height: 500px;
+  background-color: #000000;
+  padding: 100px 0;
+  text-align: center;
+  color: #ffffff;
+  border-top: 2px solid #ffce3c;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.footer__logo img {
+  height: 100px;
+}
+.footer-bottom {
+  margin-top: 35px;
+  text-align: center;
+}
+.footer-bottom img.pubg-logo {
+  height: 100px;
+}
+.copyright {
+  max-width: 600px;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.layer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+.layer > div {
+  background: #383838;
+  color: #f0f0f0;
+  padding: 30px;
+  margin: 15vh auto;
+  width: 600px;
+  border: 2px solid #f3c537;
+  border-radius: 8px;
+}
+.layer h3 {
+  font-size: 18px;
+  background-color: #f3c537;
+  color: #000;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+}
+.layer p {
+  line-height: 1.7;
+}
+.layer__btm {
+  text-align: right;
+  margin-top: 15px;
+}
+.layer__close {
+  background: transparent;
+  color: #f3c537;
+  border: 1px solid #f3c537;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.layer__close:hover {
+  background: #f3c537;
+  color: #000;
+}
+
+.banner {
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: #333;
+  border-radius: 8px;
+  border: 1px solid #3d3d3d;
+  max-width: 1970px;
+  width: 100%;
+}
+.banner ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.banner li {
+  width: 900px;
+  height: 550px;
+  overflow: hidden;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+.banner li:hover img {
+  transform: scale(1.05);
+}
+
+.video-banner {
+  margin: 60px 30px;
+  padding: 30px 20px;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+}
+.video-banner .content_title {
+  font-size: 22px;
+  color: #f3c537;
+  margin-bottom: 25px;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.video-thumb {
+  background-color: #333;
+  border-radius: 6px;
+  overflow: hidden;
+  color: #ccc;
+}
+.video-thumb img {
+  width: 100%;
+  height: 258px;
+  object-fit: cover;
+  border-radius: 6px 6px 0 0;
+  transition: transform 0.3s;
+}
+.video-thumb a:hover img {
+  transform: scale(1.05);
+}
+
+.video-thumb p {
+  padding: 10px;
+  font-size: 14px;
+}
+/* 🔽 로그인 + 게임스타트 버튼 추가 스타일 */
+.auth-buttons {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.login-btn {
+  color: #ffce1c;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.login-btn:hover {
+  color: #ffa733;
+}
+
+.divider {
+  color: #666;
+  font-size: 16px;
+}
+
+/* ✅ GAME START 버튼 통합 스타일 */
+.game-start-btn {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.game-start-btn img {
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.game-start-btn img:hover {
+  transform: scale(1.05);
+}

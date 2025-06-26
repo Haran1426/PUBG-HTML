@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-image: url('../images/login_Ch.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 140px;
+}
+
+.login-box {
+  width: 460px;
+  padding: 50px 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.logo-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #f3c537;
+  margin-bottom: 35px;
+  border-bottom: 3px solid #f3c537;
+  display: inline-block;
+  padding-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.login-form input {
+  width: 100%;
+  font-size: 18px;
+  padding: 16px 18px;
+  margin-bottom: 22px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #111;
+  transition: all 0.2s ease;
+}
+
+.login-form input:focus {
+  outline: 2px solid #f3c537;
+  background-color: #fff;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #f3c537;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #ffcd38;
+}
+
+.login-links {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.login-links a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+  color: #f3c537;
+}

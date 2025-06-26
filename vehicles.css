@@ -1,0 +1,126 @@
+/* vehicles.css 파일 */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+KR&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:#121212;
+  color:#ececec;
+  font-family:'Noto Sans KR',sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px;
+}
+a{color:#f0c041;text-decoration:none;transition:color .3s;}
+a:hover{color:#fff;}
+.header{margin-top:30px;text-align:center;}
+.header h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:4rem;
+  color:#f0c041;
+  text-shadow:0 0 10px #f0c041;
+  letter-spacing:2px;
+}
+.back-nav{margin:20px 0;}
+.back-nav a{
+  padding:8px 14px;
+  border:2px solid #f0c041;
+  border-radius:6px;
+  display:inline-block;
+  transition:background .3s,color .3s;
+}
+.back-nav a:hover{
+  background:#f0c041;
+  color:#121212;
+}
+.content-container{
+  width:100%;
+  max-width:1000px;
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+  margin-bottom:40px;
+}
+.intro h2,
+.vehicle-category h2,
+.tips h2{
+  font-family:'Bebas Neue',sans-serif;
+  color:#f0c041;
+  font-size:2rem;
+  border-bottom:3px solid #f0c041;
+  display:inline-block;
+  margin-bottom:15px;
+  padding-bottom:5px;
+}
+.intro p{
+  margin-top:10px;
+  line-height:1.5;
+  text-align:center;
+}
+
+/* 모든 섹션 기본 그리드 */
+.vehicle-category .grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* 1. 육상 차량만 2열 고정 */
+.content-container > section:nth-child(2) .grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 2. 수상 차량, 이륜차 & 특수 탈것은 자동 분할 */
+.content-container > section:nth-child(3) .grid,
+.content-container > section:nth-child(4) .grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.vehicle-category .card{
+  background:rgba(0,0,0,0.6);
+  padding:30px;
+  border:1px solid #333;
+  border-radius:6px;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.7);
+}
+.vehicle-category .card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:4px;
+  margin-bottom:15px;
+}
+.vehicle-category .card h3{
+  color:#f0c041;
+  margin-bottom:10px;
+  font-size:1.2rem;
+}
+.vehicle-category .card p{
+  font-size:0.95rem;
+  line-height:1.4;
+}
+.tips ul{
+  list-style:none;
+  padding-left:20px;
+}
+.tips li{
+  position:relative;
+  padding-left:24px;
+  margin-bottom:10px;
+  font-size:0.95rem;
+  line-height:1.4;
+}
+.tips li::before{
+  content:'✔️';
+  position:absolute;
+  left:0;
+  color:#f0c041;
+}
+@media (max-width: 600px) {
+  .header h1{font-size:3rem;}
+  /* 모바일에서는 모두 1열 */
+  .vehicle-category .grid{
+    grid-template-columns:1fr !important;
+  }
+}
